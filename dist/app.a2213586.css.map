@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/app/style.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA","file":"app.a2213586.css","sourceRoot":"../src","sourcesContent":["h1 {\n  font-family: \"Vidaloka\", serif;\n  font-size: 4rem;\n  text-align: center;\n}\n"]}
