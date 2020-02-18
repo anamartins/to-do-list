@@ -10,10 +10,12 @@ class Text extends React.Component {
 
     this.state = {
       value: "",
-      postitsColors: ["pink", "blue", "yellow", "green", "orange"]
+      postitsColors: ["pink", "blue", "yellow", "green", "orange"],
+      selectedColor: "pink"
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onClickButton = this.onClickButton.bind(this);
+    this.onColorChange = this.onColorChange.bind(this);
   }
 
   onInputChange(event) {
@@ -21,14 +23,26 @@ class Text extends React.Component {
   }
 
   onClickButton() {
-    this.props.addItem(this.state.value);
+    this.props.addItem(this.state.value, this.state.selectedColor);
     this.setState({ value: "" });
+  }
+
+  onColorChange(color) {
+    console.log("color: ", color);
+    this.setState({ selectedColor: color });
   }
 
   createRadio() {
     let radioButtons = [];
     for (let i = 0; i < this.state.postitsColors.length; i++) {
-      radioButtons.push(<Radio key={i} color={this.state.postitsColors[i]} />);
+      radioButtons.push(
+        <Radio
+          key={i}
+          color={this.state.postitsColors[i]}
+          selectedColor={this.state.selectedColor}
+          onChange={this.onColorChange}
+        />
+      );
     }
     return radioButtons;
   }

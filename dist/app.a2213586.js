@@ -32760,20 +32760,36 @@ function (_React$Component) {
   _inherits(Radio, _React$Component);
 
   function Radio(props) {
+    var _this;
+
     _classCallCheck(this, Radio);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Radio).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Radio).call(this, props));
+    _this.state = {
+      defaultColor: "pink"
+    };
+    return _this;
   }
 
   _createClass(Radio, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return _react.default.createElement("div", {
         className: "radio-item"
       }, _react.default.createElement("input", {
         type: "radio",
-        name: this.props.color
-      }), _react.default.createElement("label", null, this.props.color));
+        name: "color",
+        value: this.props.color,
+        onChange: function onChange() {
+          return _this2.props.onChange(_this2.props.color);
+        },
+        checked: this.props.color === this.props.selectedColor
+      }), _react.default.createElement("label", {
+        htmlFor: this.props.color,
+        className: this.props.color
+      }, this.props.color));
     }
   }]);
 
@@ -32781,7 +32797,9 @@ function (_React$Component) {
 }(_react.default.Component);
 
 Radio.propTypes = {
-  color: _propTypes.default.string
+  color: _propTypes.default.string,
+  selectedColor: _propTypes.default.string,
+  onChange: _propTypes.default.func
 };
 var _default = Radio;
 exports.default = _default;
@@ -32839,10 +32857,12 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Text).call(this, props));
     _this.state = {
       value: "",
-      postitsColors: ["pink", "blue", "yellow", "green", "orange"]
+      postitsColors: ["pink", "blue", "yellow", "green", "orange"],
+      selectedColor: "pink"
     };
     _this.onInputChange = _this.onInputChange.bind(_assertThisInitialized(_this));
     _this.onClickButton = _this.onClickButton.bind(_assertThisInitialized(_this));
+    _this.onColorChange = _this.onColorChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -32856,9 +32876,17 @@ function (_React$Component) {
   }, {
     key: "onClickButton",
     value: function onClickButton() {
-      this.props.addItem(this.state.value);
+      this.props.addItem(this.state.value, this.state.selectedColor);
       this.setState({
         value: ""
+      });
+    }
+  }, {
+    key: "onColorChange",
+    value: function onColorChange(color) {
+      console.log("color: ", color);
+      this.setState({
+        selectedColor: color
       });
     }
   }, {
@@ -32869,7 +32897,9 @@ function (_React$Component) {
       for (var i = 0; i < this.state.postitsColors.length; i++) {
         radioButtons.push(_react.default.createElement(_radioButton.default, {
           key: i,
-          color: this.state.postitsColors[i]
+          color: this.state.postitsColors[i],
+          selectedColor: this.state.selectedColor,
+          onChange: this.onColorChange
         }));
       }
 
@@ -32957,9 +32987,6 @@ function (_React$Component) {
     _classCallCheck(this, Card);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
-    _this.state = {
-      color: "pink"
-    };
     _this.onMouseMove = _this.onMouseMove.bind(_assertThisInitialized(_this));
     _this.onMouseDown = _this.onMouseDown.bind(_assertThisInitialized(_this));
     return _this;
@@ -32980,7 +33007,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
-        className: "card " + this.state.color,
+        className: "card " + this.props.color,
         onMouseDown: this.onMouseDown
       }, _react.default.createElement("p", null, this.props.value));
     }
@@ -32990,7 +33017,8 @@ function (_React$Component) {
 }(_react.default.Component);
 
 Card.propTypes = {
-  value: _propTypes.default.string
+  value: _propTypes.default.string,
+  color: _propTypes.default.string
 };
 var _default = Card;
 exports.default = _default;
@@ -33052,10 +33080,11 @@ function (_React$Component) {
 
   _createClass(App, [{
     key: "addItem",
-    value: function addItem(value) {
+    value: function addItem(value, color) {
       var card = this.state.cards;
       card.push({
-        text: value
+        text: value,
+        color: color
       });
       console.log("card", card);
       this.setState({
@@ -33070,7 +33099,8 @@ function (_React$Component) {
       for (var i = 0; i < this.state.cards.length; i++) {
         items.push(_react.default.createElement(_card.default, {
           key: i,
-          value: this.state.cards[i].text
+          value: this.state.cards[i].text,
+          color: this.state.cards[i].color
         }));
       }
 

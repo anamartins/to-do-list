@@ -1,7 +1,31 @@
+$pink: #f26699;
+$blue: #04adbf;
+$yellow: #f5e07e;
+$green: #a4ec10;
+$orange: #f28705;
+
 .radio-item {
   margin: 0;
 
   input {
     margin: 0.3rem;
+  }
+
+  label {
+    &.pink {
+      background-color: $pink;
+    }
+    &.blue {
+      background-color: $blue;
+    }
+    &.yellow {
+      background-color: $yellow;
+    }
+    &.green {
+      background-color: $green;
+    }
+    &.orange {
+      background-color: $orange;
+    }
   }
 }

@@ -14,9 +14,9 @@ class App extends React.Component {
     this.addItem = this.addItem.bind(this);
   }
 
-  addItem(value) {
+  addItem(value, color) {
     let card = this.state.cards;
-    card.push({ text: value });
+    card.push({ text: value, color: color });
     console.log("card", card);
     this.setState({ cards: card });
   }
@@ -24,7 +24,13 @@ class App extends React.Component {
   createCard() {
     let items = [];
     for (let i = 0; i < this.state.cards.length; i++) {
-      items.push(<Card key={i} value={this.state.cards[i].text} />);
+      items.push(
+        <Card
+          key={i}
+          value={this.state.cards[i].text}
+          color={this.state.cards[i].color}
+        />
+      );
     }
     return items;
   }

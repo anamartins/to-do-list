@@ -5,9 +5,7 @@ import "./style.scss";
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      color: "pink"
-    };
+
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseDown = this.onMouseDown.bind(this);
   }
@@ -25,7 +23,7 @@ class Card extends React.Component {
   render() {
     return (
       <div
-        className={"card " + this.state.color}
+        className={"card " + this.props.color}
         onMouseDown={this.onMouseDown}
       >
         <p>{this.props.value}</p>
@@ -35,7 +33,8 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-  value: PropTypes.string
+  value: PropTypes.string,
+  color: PropTypes.string
 };
 
 export default Card;
