@@ -1,7 +1,110 @@
+.radio-item {
+  margin: 0;
+}
+.radio-item input {
+  margin: 0.3rem;
+}
+.card {
+  width: 15rem;
+  height: 10rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 2rem;
+  font-family: "Coming Soon", sans-serif;
+}
+.card.pink {
+  background-color: #f26699;
+}
+.card.blue {
+  background-color: #04adbf;
+}
+.card.yellow {
+  background-color: #f5e07e;
+}
+.card.green {
+  background-color: #cad413;
+}
+.card.orange {
+  background-color: #f28705;
+}
+.card p {
+  margin: 0;
+  margin-top: 1rem;
+}
 h1 {
   font-family: "Vidaloka", serif;
   font-size: 4rem;
   text-align: center;
+}
+
+.everything {
+  display: flex;
+  flex-direction: column;
+}
+
+.insert {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1%;
+}
+.insert .card-data {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1%;
+}
+.insert .card-data .radio-group {
+  display: flex;
+  margin: 0.1rem;
+}
+.insert .card-data .radio-group .radio-item {
+  padding: 0.5rem;
+  padding-left: 0;
+}
+.insert .text {
+  margin: 1%;
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+}
+.insert .btnAdd button {
+  margin: 0 0.5rem;
+  height: 4rem;
+  width: 5rem;
+  border-radius: 5px;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.board .todo,
+.board .done {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1%;
+  padding-bottom: 1%;
+  margin: 0.3%;
+  border: 0.15rem solid black;
+  border-radius: 3px;
+}
+.board .todo h2,
+.board .done h2 {
+  width: 100%;
+  text-align: center;
+  font-family: "Vidaloka", serif;
+}
+.board .todo {
+  width: 60%;
+}
+.board .done {
+  width: 33%;
+}
+.board .done .card {
+  text-decoration: overline;
 }
 
 /*# sourceMappingURL=/app.a2213586.css.map */

@@ -1,14 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Radio from "/components/radio-button";
+
+import "./style.scss";
 
 class Text extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      value: ""
+      value: "",
+      postitsColors: ["pink", "blue", "yellow", "green", "orange"]
     };
     this.onInputChange = this.onInputChange.bind(this);
+    this.onClickButton = this.onClickButton.bind(this);
   }
 
   onInputChange(event) {
@@ -16,21 +21,36 @@ class Text extends React.Component {
   }
 
   onClickButton() {
-    this.props.addItem();
+    this.props.addItem(this.state.value);
+    this.setState({ value: "" });
+  }
+
+  createRadio() {
+    let radioButtons = [];
+    for (let i = 0; i < this.state.postitsColors.length; i++) {
+      radioButtons.push(<Radio key={i} color={this.state.postitsColors[i]} />);
+    }
+    return radioButtons;
   }
 
   render() {
     return (
       <div className="insert">
-        <input
-          placeholder="write here you very adult task"
-          type="text"
-          value={this.state.value}
-          onChange={this.onInputChange}
-        ></input>
-        <button type="button" onClick={this.onClickButton()}>
-          add item
-        </button>
+        <div className="card-data">
+          <input
+            className="text"
+            placeholder="write here you very adult task"
+            type="text"
+            value={this.state.value}
+            onChange={this.onInputChange}
+          ></input>
+          <div className="radio-group">{this.createRadio()}</div>
+        </div>
+        <div className="btnAdd">
+          <button type="button" onClick={this.onClickButton}>
+            add item
+          </button>
+        </div>
       </div>
     );
   }

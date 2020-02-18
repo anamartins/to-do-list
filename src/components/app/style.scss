@@ -3,3 +3,76 @@ h1 {
   font-size: 4rem;
   text-align: center;
 }
+
+.everything {
+  display: flex;
+  flex-direction: column;
+}
+
+.insert {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1%;
+  .card-data {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1%;
+    .radio-group {
+      display: flex;
+      margin: 0.1rem;
+      .radio-item {
+        padding: 0.5rem;
+        padding-left: 0;
+      }
+    }
+  }
+  .text {
+    margin: 1%;
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+  }
+  .btnAdd {
+    button {
+      margin: 0 0.5rem;
+      height: 4rem;
+      width: 5rem;
+      border-radius: 5px;
+    }
+  }
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .todo,
+  .done {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 1%;
+    padding-bottom: 1%;
+    margin: 0.3%;
+    border: 0.15rem solid black;
+    border-radius: 3px;
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-family: "Vidaloka", serif;
+    }
+  }
+  .todo {
+    width: 60%;
+  }
+
+  .done {
+    width: 33%;
+    .card {
+      text-decoration: overline;
+    }
+  }
+}

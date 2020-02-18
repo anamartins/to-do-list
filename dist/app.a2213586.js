@@ -32648,149 +32648,7 @@ if ("development" !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"react-is":"../node_modules/react-is/index.js","./factoryWithTypeCheckers":"../node_modules/prop-types/factoryWithTypeCheckers.js"}],"components/text/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Text =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Text, _React$Component);
-
-  function Text(props) {
-    var _this;
-
-    _classCallCheck(this, Text);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Text).call(this, props));
-    _this.state = {
-      value: ""
-    };
-    _this.onInputChange = _this.onInputChange.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(Text, [{
-    key: "onInputChange",
-    value: function onInputChange(event) {
-      this.setState({
-        value: event.target.value
-      });
-    }
-  }, {
-    key: "onClickButton",
-    value: function onClickButton() {
-      this.props.addItem();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", {
-        className: "insert"
-      }, _react.default.createElement("input", {
-        placeholder: "write here you very adult task",
-        type: "text",
-        value: this.state.value,
-        onChange: this.onInputChange
-      }), _react.default.createElement("button", {
-        type: "button",
-        onClick: this.onClickButton()
-      }, "add item"));
-    }
-  }]);
-
-  return Text;
-}(_react.default.Component);
-
-Text.propTypes = {
-  addItem: _propTypes.default.func
-};
-var _default = Text;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js"}],"components/card/index.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Card =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Card, _React$Component);
-
-  function Card(props) {
-    _classCallCheck(this, Card);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
-  }
-
-  _createClass(Card, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", {
-        className: "postit"
-      }, _react.default.createElement("p", null, "ITEM"));
-    }
-  }]);
-
-  return Card;
-}(_react.default.Component);
-
-var _default = Card;
-exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"../node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react-is":"../node_modules/react-is/index.js","./factoryWithTypeCheckers":"../node_modules/prop-types/factoryWithTypeCheckers.js"}],"../node_modules/parcel/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -32857,7 +32715,286 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel/src/builtins/bundle-url.js"}],"components/app/style.scss":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel/src/builtins/bundle-url.js"}],"components/radio-button/style.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"components/radio-button/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+require("./style.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Radio =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Radio, _React$Component);
+
+  function Radio(props) {
+    _classCallCheck(this, Radio);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Radio).call(this, props));
+  }
+
+  _createClass(Radio, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        className: "radio-item"
+      }, _react.default.createElement("input", {
+        type: "radio",
+        name: this.props.color
+      }), _react.default.createElement("label", null, this.props.color));
+    }
+  }]);
+
+  return Radio;
+}(_react.default.Component);
+
+Radio.propTypes = {
+  color: _propTypes.default.string
+};
+var _default = Radio;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/radio-button/style.scss"}],"components/text/style.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"components/text/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _radioButton = _interopRequireDefault(require("/components/radio-button"));
+
+require("./style.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Text =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Text, _React$Component);
+
+  function Text(props) {
+    var _this;
+
+    _classCallCheck(this, Text);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Text).call(this, props));
+    _this.state = {
+      value: "",
+      postitsColors: ["pink", "blue", "yellow", "green", "orange"]
+    };
+    _this.onInputChange = _this.onInputChange.bind(_assertThisInitialized(_this));
+    _this.onClickButton = _this.onClickButton.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Text, [{
+    key: "onInputChange",
+    value: function onInputChange(event) {
+      this.setState({
+        value: event.target.value
+      });
+    }
+  }, {
+    key: "onClickButton",
+    value: function onClickButton() {
+      this.props.addItem(this.state.value);
+      this.setState({
+        value: ""
+      });
+    }
+  }, {
+    key: "createRadio",
+    value: function createRadio() {
+      var radioButtons = [];
+
+      for (var i = 0; i < this.state.postitsColors.length; i++) {
+        radioButtons.push(_react.default.createElement(_radioButton.default, {
+          key: i,
+          color: this.state.postitsColors[i]
+        }));
+      }
+
+      return radioButtons;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        className: "insert"
+      }, _react.default.createElement("div", {
+        className: "card-data"
+      }, _react.default.createElement("input", {
+        className: "text",
+        placeholder: "write here you very adult task",
+        type: "text",
+        value: this.state.value,
+        onChange: this.onInputChange
+      }), _react.default.createElement("div", {
+        className: "radio-group"
+      }, this.createRadio())), _react.default.createElement("div", {
+        className: "btnAdd"
+      }, _react.default.createElement("button", {
+        type: "button",
+        onClick: this.onClickButton
+      }, "add item")));
+    }
+  }]);
+
+  return Text;
+}(_react.default.Component);
+
+Text.propTypes = {
+  addItem: _propTypes.default.func
+};
+var _default = Text;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","/components/radio-button":"components/radio-button/index.js","./style.scss":"components/text/style.scss"}],"components/card/style.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"components/card/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+require("./style.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Card =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Card, _React$Component);
+
+  function Card(props) {
+    var _this;
+
+    _classCallCheck(this, Card);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
+    _this.state = {
+      color: "pink"
+    };
+    _this.onMouseMove = _this.onMouseMove.bind(_assertThisInitialized(_this));
+    _this.onMouseDown = _this.onMouseDown.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Card, [{
+    key: "onMouseDown",
+    value: function onMouseDown(event) {
+      console.log("event", window.event);
+      window.addEventListener("mousemove", this.onMouseMove);
+      console.log("down");
+    }
+  }, {
+    key: "onMouseMove",
+    value: function onMouseMove(event) {// console.log("olar");
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        className: "card " + this.state.color,
+        onMouseDown: this.onMouseDown
+      }, _react.default.createElement("p", null, this.props.value));
+    }
+  }]);
+
+  return Card;
+}(_react.default.Component);
+
+Card.propTypes = {
+  value: _propTypes.default.string
+};
+var _default = Card;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/card/style.scss"}],"components/app/style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -32887,9 +33024,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -32901,14 +33038,44 @@ function (_React$Component) {
   _inherits(App, _React$Component);
 
   function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      cards: []
+    };
+    _this.addItem = _this.addItem.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(App, [{
     key: "addItem",
-    value: function addItem() {}
+    value: function addItem(value) {
+      var card = this.state.cards;
+      card.push({
+        text: value
+      });
+      console.log("card", card);
+      this.setState({
+        cards: card
+      });
+    }
+  }, {
+    key: "createCard",
+    value: function createCard() {
+      var items = [];
+
+      for (var i = 0; i < this.state.cards.length; i++) {
+        items.push(_react.default.createElement(_card.default, {
+          key: i,
+          value: this.state.cards[i].text
+        }));
+      }
+
+      return items;
+    }
   }, {
     key: "render",
     value: function render() {
@@ -32918,13 +33085,11 @@ function (_React$Component) {
         addItem: this.addItem
       }), _react.default.createElement("div", {
         className: "board"
-      }, _react.default.createElement(_card.default, null), _react.default.createElement("div", {
-        className: "doing"
-      }), _react.default.createElement("div", {
+      }, _react.default.createElement("div", {
         className: "todo"
-      }), _react.default.createElement("div", {
+      }, _react.default.createElement("h2", null, "to-do"), this.createCard()), _react.default.createElement("div", {
         className: "done"
-      })));
+      }, _react.default.createElement("h2", null, "done!"))));
     }
   }]);
 
