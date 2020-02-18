@@ -25,7 +25,8 @@
   padding: 1rem;
   margin: 0.5rem;
   font-size: 1.5rem;
-  font-family: "Coming Soon", sans-serif;
+  font-family: "Amatic SC", sans-serif;
+  position: absolute;
 }
 .card.pink {
   background-color: #f26699;
@@ -46,6 +47,12 @@
   margin: 0;
   margin-top: 1rem;
 }
+body,
+html,
+#root {
+  height: 100%;
+}
+
 h1 {
   font-family: "Vidaloka", serif;
   font-size: 4rem;
@@ -55,6 +62,7 @@ h1 {
 .everything {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .insert {
@@ -93,6 +101,7 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100%;
 }
 .board .todo,
 .board .done {
@@ -105,6 +114,7 @@ h1 {
   margin: 0.3%;
   border: 0.15rem solid black;
   border-radius: 3px;
+  height: 50rem;
 }
 .board .todo h2,
 .board .done h2 {
@@ -114,6 +124,9 @@ h1 {
 }
 .board .todo {
   width: 60%;
+}
+.board .todo .card {
+  cursor: pointer;
 }
 .board .done {
   width: 33%;

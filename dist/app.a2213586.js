@@ -32987,8 +32987,10 @@ function (_React$Component) {
     _classCallCheck(this, Card);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
+    _this.cardRef = _react.default.createRef();
     _this.onMouseMove = _this.onMouseMove.bind(_assertThisInitialized(_this));
     _this.onMouseDown = _this.onMouseDown.bind(_assertThisInitialized(_this));
+    _this.onMouseUp = _this.onMouseUp.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -32997,18 +32999,34 @@ function (_React$Component) {
     value: function onMouseDown(event) {
       console.log("event", window.event);
       window.addEventListener("mousemove", this.onMouseMove);
+      window.addEventListener("mouseup", this.onMouseUp);
       console.log("down");
     }
   }, {
     key: "onMouseMove",
-    value: function onMouseMove(event) {// console.log("olar");
+    value: function onMouseMove(event) {
+      var x = window.event.screenX;
+      var y = window.event.screenY;
+      this.cardRef.current.style.left = x + "px";
+      this.cardRef.current.style.top = y + "px";
+    }
+  }, {
+    key: "onMouseUp",
+    value: function onMouseUp(event) {
+      window.removeEventListener("mousemove", this.onMouseMove);
+      console.log("up");
     }
   }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
-        className: "card " + this.props.color,
-        onMouseDown: this.onMouseDown
+        className: "card " + this.props.color // style={{
+        //   top: JSON.stringify(this.props.top) + "px",
+        //   left: JSON.stringify(this.props.left) + "px"
+        // }}
+        ,
+        onMouseDown: this.onMouseDown,
+        ref: this.cardRef
       }, _react.default.createElement("p", null, this.props.value));
     }
   }]);
@@ -33018,7 +33036,9 @@ function (_React$Component) {
 
 Card.propTypes = {
   value: _propTypes.default.string,
-  color: _propTypes.default.string
+  color: _propTypes.default.string,
+  top: _propTypes.default.number,
+  left: _propTypes.default.number
 };
 var _default = Card;
 exports.default = _default;
@@ -33060,6 +33080,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+var CONST_INITIAL_TOP = 370;
+var CONST_INITIAL_LEFT = 270;
+
 var App =
 /*#__PURE__*/
 function (_React$Component) {
@@ -33074,6 +33097,14 @@ function (_React$Component) {
     _this.state = {
       cards: []
     };
+    var localStorageCards = localStorage.getItem("cards");
+    var cards = [];
+
+    if (localStorageCards !== null) {
+      cards = JSON.parse(localStorageCards);
+    }
+
+    _this.state.cards = cards;
     _this.addItem = _this.addItem.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -33084,9 +33115,12 @@ function (_React$Component) {
       var card = this.state.cards;
       card.push({
         text: value,
-        color: color
+        color: color,
+        top: CONST_INITIAL_TOP,
+        left: CONST_INITIAL_LEFT
       });
-      console.log("card", card);
+      var cardsStringfied = JSON.stringify(card);
+      localStorage.setItem("cards", cardsStringfied);
       this.setState({
         cards: card
       });
@@ -33100,7 +33134,9 @@ function (_React$Component) {
         items.push(_react.default.createElement(_card.default, {
           key: i,
           value: this.state.cards[i].text,
-          color: this.state.cards[i].color
+          color: this.state.cards[i].color,
+          top: this.state.cards[i].top,
+          left: this.state.cards[i].left
         }));
       }
 
