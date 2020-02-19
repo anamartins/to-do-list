@@ -10,49 +10,76 @@ class Card extends React.Component {
     this.onMouseMove = this.onMouseMove.bind(this);
     this.onMouseDown = this.onMouseDown.bind(this);
     this.onMouseUp = this.onMouseUp.bind(this);
+    this.deleteCard = this.deleteCard.bind(this);
   }
 
   onMouseDown(event) {
-    console.log("event", window.event);
     window.addEventListener("mousemove", this.onMouseMove);
     window.addEventListener("mouseup", this.onMouseUp);
-    console.log("down");
+
+    let x = window.event.screenX;
+    let y = window.event.screenY;
+
+    let posCard = { x: this.props.left, y: this.props.top };
+    let posClick = { x: x, y: y };
+    let diff = { x: posClick.x - posCard.x, y: posClick.y - posCard.y };
+
+    this.diff = diff;
   }
 
   onMouseMove(event) {
     let x = window.event.screenX;
     let y = window.event.screenY;
-    this.cardRef.current.style.left = x + "px";
-    this.cardRef.current.style.top = y + "px";
+
+    let newX = x - this.diff.x;
+    let newY = y - this.diff.y;
+
+    this.cardRef.current.style.left = newX + "px";
+    this.cardRef.current.style.top = newY + "px";
+    this.props.onUpdatePosition(this.props.id, newX, newY);
   }
 
   onMouseUp(event) {
     window.removeEventListener("mousemove", this.onMouseMove);
-    console.log("up");
+    this.props.onDrop(this.props.id);
+  }
+
+  deleteCard() {
+    this.props.removeItem(this.props.id);
   }
 
   render() {
     return (
       <div
-        className={"card " + this.props.color}
-        // style={{
-        //   top: JSON.stringify(this.props.top) + "px",
-        //   left: JSON.stringify(this.props.left) + "px"
-        // }}
+        className={
+          "card " + this.props.color + (this.props.done ? " crossed" : "")
+        }
+        style={{
+          top: this.props.top,
+          left: this.props.left
+        }}
         onMouseDown={this.onMouseDown}
         ref={this.cardRef}
       >
         <p>{this.props.value}</p>
+        <p>
+          <a onClick={this.deleteCard}>delete</a>
+        </p>
       </div>
     );
   }
 }
 
 Card.propTypes = {
+  id: PropTypes.string,
   value: PropTypes.string,
   color: PropTypes.string,
   top: PropTypes.number,
-  left: PropTypes.number
+  left: PropTypes.number,
+  removeItem: PropTypes.func,
+  onUpdatePosition: PropTypes.func,
+  onDrop: PropTypes.func,
+  done: PropTypes.bool
 };
 
 export default Card;

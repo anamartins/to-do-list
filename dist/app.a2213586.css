@@ -20,6 +20,7 @@
   background-color: #f28705;
 }
 .card {
+  cursor: pointer;
   width: 15rem;
   height: 10rem;
   padding: 1rem;
@@ -31,21 +32,49 @@
 .card.pink {
   background-color: #f26699;
 }
+.card.pink a:hover {
+  background-color: #f26699;
+}
 .card.blue {
+  background-color: #04adbf;
+}
+.card.blue a:hover {
   background-color: #04adbf;
 }
 .card.yellow {
   background-color: #f5e07e;
 }
+.card.yellow a:hover {
+  background-color: #f5e07e;
+}
 .card.green {
+  background-color: #a4ec10;
+}
+.card.green a:hover {
   background-color: #a4ec10;
 }
 .card.orange {
   background-color: #f28705;
 }
+.card.orange a:hover {
+  background-color: #f28705;
+}
+.card.crossed {
+  text-decoration: line-through;
+}
 .card p {
   margin: 0;
   margin-top: 1rem;
+}
+.card p a {
+  color: #000;
+  text-decoration: none;
+  opacity: 0.6;
+  background-color: #ffff00;
+}
+.card p a:hover {
+  color: #000;
+  text-decoration: underline;
 }
 body,
 html,
@@ -125,14 +154,8 @@ h1 {
 .board .todo {
   width: 60%;
 }
-.board .todo .card {
-  cursor: pointer;
-}
 .board .done {
   width: 33%;
-}
-.board .done .card {
-  text-decoration: overline;
 }
 
 /*# sourceMappingURL=/app.a2213586.css.map */

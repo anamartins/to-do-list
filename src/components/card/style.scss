@@ -4,6 +4,7 @@ $yellow: #f5e07e;
 $green: #a4ec10;
 $orange: #f28705;
 .card {
+  cursor: pointer;
   width: 15rem;
   height: 10rem;
   padding: 1rem;
@@ -13,22 +14,52 @@ $orange: #f28705;
   position: absolute;
   &.pink {
     background-color: $pink;
+    a:hover {
+      background-color: $pink;
+    }
   }
   &.blue {
     background-color: $blue;
+    a:hover {
+      background-color: $blue;
+    }
   }
   &.yellow {
     background-color: $yellow;
+    a:hover {
+      background-color: $yellow;
+    }
   }
   &.green {
     background-color: $green;
+    a:hover {
+      background-color: $green;
+    }
   }
   &.orange {
     background-color: $orange;
+    a:hover {
+      background-color: $orange;
+    }
+  }
+  &.crossed {
+    text-decoration: line-through;
   }
 
   p {
     margin: 0;
     margin-top: 1rem;
+
+    a {
+      color: #000;
+      text-decoration: none;
+      opacity: 0.6;
+      background-color: #ffff00;
+    }
+
+    a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
   }
 }

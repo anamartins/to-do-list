@@ -76,15 +76,9 @@ h1 {
   }
   .todo {
     width: 60%;
-    .card {
-      cursor: pointer;
-    }
   }
 
   .done {
     width: 33%;
-    .card {
-      text-decoration: overline;
-    }
   }
 }

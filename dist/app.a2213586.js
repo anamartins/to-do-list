@@ -32991,43 +32991,67 @@ function (_React$Component) {
     _this.onMouseMove = _this.onMouseMove.bind(_assertThisInitialized(_this));
     _this.onMouseDown = _this.onMouseDown.bind(_assertThisInitialized(_this));
     _this.onMouseUp = _this.onMouseUp.bind(_assertThisInitialized(_this));
+    _this.deleteCard = _this.deleteCard.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Card, [{
     key: "onMouseDown",
     value: function onMouseDown(event) {
-      console.log("event", window.event);
       window.addEventListener("mousemove", this.onMouseMove);
       window.addEventListener("mouseup", this.onMouseUp);
-      console.log("down");
+      var x = window.event.screenX;
+      var y = window.event.screenY;
+      var posCard = {
+        x: this.props.left,
+        y: this.props.top
+      };
+      var posClick = {
+        x: x,
+        y: y
+      };
+      var diff = {
+        x: posClick.x - posCard.x,
+        y: posClick.y - posCard.y
+      };
+      this.diff = diff;
     }
   }, {
     key: "onMouseMove",
     value: function onMouseMove(event) {
       var x = window.event.screenX;
       var y = window.event.screenY;
-      this.cardRef.current.style.left = x + "px";
-      this.cardRef.current.style.top = y + "px";
+      var newX = x - this.diff.x;
+      var newY = y - this.diff.y;
+      this.cardRef.current.style.left = newX + "px";
+      this.cardRef.current.style.top = newY + "px";
+      this.props.onUpdatePosition(this.props.id, newX, newY);
     }
   }, {
     key: "onMouseUp",
     value: function onMouseUp(event) {
       window.removeEventListener("mousemove", this.onMouseMove);
-      console.log("up");
+      this.props.onDrop(this.props.id);
+    }
+  }, {
+    key: "deleteCard",
+    value: function deleteCard() {
+      this.props.removeItem(this.props.id);
     }
   }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
-        className: "card " + this.props.color // style={{
-        //   top: JSON.stringify(this.props.top) + "px",
-        //   left: JSON.stringify(this.props.left) + "px"
-        // }}
-        ,
+        className: "card " + this.props.color + (this.props.done ? " crossed" : ""),
+        style: {
+          top: this.props.top,
+          left: this.props.left
+        },
         onMouseDown: this.onMouseDown,
         ref: this.cardRef
-      }, _react.default.createElement("p", null, this.props.value));
+      }, _react.default.createElement("p", null, this.props.value), _react.default.createElement("p", null, _react.default.createElement("a", {
+        onClick: this.deleteCard
+      }, "delete")));
     }
   }]);
 
@@ -33035,10 +33059,15 @@ function (_React$Component) {
 }(_react.default.Component);
 
 Card.propTypes = {
+  id: _propTypes.default.string,
   value: _propTypes.default.string,
   color: _propTypes.default.string,
   top: _propTypes.default.number,
-  left: _propTypes.default.number
+  left: _propTypes.default.number,
+  removeItem: _propTypes.default.func,
+  onUpdatePosition: _propTypes.default.func,
+  onDrop: _propTypes.default.func,
+  done: _propTypes.default.bool
 };
 var _default = Card;
 exports.default = _default;
@@ -33094,6 +33123,7 @@ function (_React$Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.doneRef = _react.default.createRef();
     _this.state = {
       cards: []
     };
@@ -33106,24 +33136,95 @@ function (_React$Component) {
 
     _this.state.cards = cards;
     _this.addItem = _this.addItem.bind(_assertThisInitialized(_this));
+    _this.removeItem = _this.removeItem.bind(_assertThisInitialized(_this));
+    _this.updateCardPosition = _this.updateCardPosition.bind(_assertThisInitialized(_this));
+    _this.onCardDrop = _this.onCardDrop.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(App, [{
     key: "addItem",
     value: function addItem(value, color) {
-      var card = this.state.cards;
-      card.push({
+      var cards = this.state.cards;
+      cards.push({
+        id: this.generateCardID(),
         text: value,
         color: color,
-        top: CONST_INITIAL_TOP,
-        left: CONST_INITIAL_LEFT
+        top: CONST_INITIAL_TOP + Math.floor(Math.random() * 100),
+        left: CONST_INITIAL_LEFT + Math.floor(Math.random() * 100),
+        done: false
       });
-      var cardsStringfied = JSON.stringify(card);
-      localStorage.setItem("cards", cardsStringfied);
+      this.updateLocalStorage();
       this.setState({
-        cards: card
+        cards: cards
       });
+    }
+  }, {
+    key: "removeItem",
+    value: function removeItem(id) {
+      var cards = this.state.cards;
+      var index = cards.findIndex(function (item) {
+        return item.id === id;
+      });
+      cards.splice(index, 1);
+      this.updateLocalStorage();
+      this.setState({
+        cards: cards
+      });
+    }
+  }, {
+    key: "updateLocalStorage",
+    value: function updateLocalStorage() {
+      var cards = this.state.cards;
+      var cardsStringfied = JSON.stringify(cards);
+      localStorage.setItem("cards", cardsStringfied);
+    }
+  }, {
+    key: "onCardDrop",
+    value: function onCardDrop(id) {
+      var cards = this.state.cards;
+      var rectDone = this.doneRef.current.getBoundingClientRect();
+      console.log("rect", rectDone);
+      cards = cards.map(function (item) {
+        if (item.id === id) {
+          if (item.top > rectDone.top && item.top < rectDone.bottom) {
+            if (item.left > rectDone.left && item.left < rectDone.right) {
+              item.done = true;
+            } else {
+              item.done = false;
+            }
+          }
+        }
+
+        return item;
+      });
+      this.setState({
+        cards: cards
+      });
+      this.updateLocalStorage();
+    }
+  }, {
+    key: "updateCardPosition",
+    value: function updateCardPosition(id, xPos, yPos) {
+      var cards = this.state.cards;
+      cards = cards.map(function (item) {
+        if (item.id === id) {
+          item.top = yPos;
+          item.left = xPos;
+        }
+
+        return item;
+      });
+      this.setState({
+        cards: cards
+      });
+      this.updateLocalStorage();
+    }
+  }, {
+    key: "generateCardID",
+    value: function generateCardID() {
+      var id = "_" + Math.random().toString(36).substr(2, 9);
+      return id;
     }
   }, {
     key: "createCard",
@@ -33133,10 +33234,15 @@ function (_React$Component) {
       for (var i = 0; i < this.state.cards.length; i++) {
         items.push(_react.default.createElement(_card.default, {
           key: i,
+          id: this.state.cards[i].id,
           value: this.state.cards[i].text,
           color: this.state.cards[i].color,
           top: this.state.cards[i].top,
-          left: this.state.cards[i].left
+          left: this.state.cards[i].left,
+          removeItem: this.removeItem,
+          onUpdatePosition: this.updateCardPosition,
+          onDrop: this.onCardDrop,
+          done: this.state.cards[i].done
         }));
       }
 
@@ -33152,9 +33258,12 @@ function (_React$Component) {
       }), _react.default.createElement("div", {
         className: "board"
       }, _react.default.createElement("div", {
+        className: "cards"
+      }, " ", this.createCard()), _react.default.createElement("div", {
         className: "todo"
-      }, _react.default.createElement("h2", null, "to-do"), this.createCard()), _react.default.createElement("div", {
-        className: "done"
+      }, _react.default.createElement("h2", null, "to-do")), _react.default.createElement("div", {
+        className: "done",
+        ref: this.doneRef
       }, _react.default.createElement("h2", null, "done!"))));
     }
   }]);
