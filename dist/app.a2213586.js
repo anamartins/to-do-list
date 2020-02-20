@@ -32862,6 +32862,7 @@ function (_React$Component) {
     };
     _this.onInputChange = _this.onInputChange.bind(_assertThisInitialized(_this));
     _this.onClickButton = _this.onClickButton.bind(_assertThisInitialized(_this));
+    _this.onKeyPress = _this.onKeyPress.bind(_assertThisInitialized(_this));
     _this.onColorChange = _this.onColorChange.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -32872,6 +32873,13 @@ function (_React$Component) {
       this.setState({
         value: event.target.value
       });
+    }
+  }, {
+    key: "onKeyPress",
+    value: function onKeyPress(event) {
+      if (event.key === "Enter") {
+        this.onClickButton();
+      }
     }
   }, {
     key: "onClickButton",
@@ -32917,7 +32925,8 @@ function (_React$Component) {
         placeholder: "write here you very adult task",
         type: "text",
         value: this.state.value,
-        onChange: this.onInputChange
+        onChange: this.onInputChange,
+        onKeyPress: this.onKeyPress
       }), _react.default.createElement("div", {
         className: "radio-group"
       }, this.createRadio())), _react.default.createElement("div", {
@@ -33031,6 +33040,7 @@ function (_React$Component) {
     key: "onMouseUp",
     value: function onMouseUp(event) {
       window.removeEventListener("mousemove", this.onMouseMove);
+      window.removeEventListener("mouseup", this.onMouseUp);
       this.props.onDrop(this.props.id);
     }
   }, {
@@ -33075,7 +33085,86 @@ Card.propTypes = {
 };
 var _default = Card;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/card/style.scss"}],"components/app/style.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/card/style.scss"}],"components/modal/style.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel/src/builtins/css-loader.js"}],"components/modal/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+require("./style.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Modal =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Modal, _React$Component);
+
+  function Modal(props) {
+    var _this;
+
+    _classCallCheck(this, Modal);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Modal).call(this, props));
+    _this.onButtonClick = _this.onButtonClick.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Modal, [{
+    key: "onButtonClick",
+    value: function onButtonClick() {
+      this.props.showModal(false);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        className: "modal"
+      }, _react.default.createElement("button", {
+        className: "close",
+        onClick: this.onButtonClick
+      }, "X"), _react.default.createElement("h1", null, "Hooray!"), _react.default.createElement("p", null, " You've completed all the tasks!"), _react.default.createElement("p", null, "Share this archievement:"));
+    }
+  }]);
+
+  return Modal;
+}(_react.default.Component);
+
+Modal.propTypes = {
+  showModal: _propTypes.default.func
+};
+var _default = Modal;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/modal/style.scss"}],"components/app/style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -33090,6 +33179,8 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 var _text = _interopRequireDefault(require("/components/text"));
 
 var _card = _interopRequireDefault(require("/components/card"));
+
+var _modal = _interopRequireDefault(require("/components/modal"));
 
 require("./style.scss");
 
@@ -33129,7 +33220,9 @@ function (_React$Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
     _this.doneRef = _react.default.createRef();
     _this.state = {
-      cards: []
+      cards: [],
+      showModal: false,
+      trophy: 0
     };
     var localStorageCards = localStorage.getItem("cards");
     var cards = [];
@@ -33143,6 +33236,8 @@ function (_React$Component) {
     _this.removeItem = _this.removeItem.bind(_assertThisInitialized(_this));
     _this.updateCardPosition = _this.updateCardPosition.bind(_assertThisInitialized(_this));
     _this.onCardDrop = _this.onCardDrop.bind(_assertThisInitialized(_this));
+    _this.isEveryCardDone = _this.isEveryCardDone.bind(_assertThisInitialized(_this));
+    _this.showModal = _this.showModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -33186,6 +33281,8 @@ function (_React$Component) {
   }, {
     key: "onCardDrop",
     value: function onCardDrop(id) {
+      var _this2 = this;
+
       var cards = this.state.cards;
       var rectDone = this.doneRef.current.getBoundingClientRect();
       cards = cards.map(function (item) {
@@ -33193,6 +33290,8 @@ function (_React$Component) {
           if (item.top > rectDone.top && item.top < rectDone.bottom) {
             if (item.left > rectDone.left && item.left < rectDone.right) {
               item.done = true;
+
+              _this2.isEveryCardDone();
             } else {
               item.done = false;
             }
@@ -33205,6 +33304,23 @@ function (_React$Component) {
         cards: cards
       });
       this.updateLocalStorage();
+    }
+  }, {
+    key: "isEveryCardDone",
+    value: function isEveryCardDone() {
+      var cards = this.state.cards;
+      var index = cards.findIndex(function (item) {
+        return item.done === false;
+      });
+      console.log("index", index);
+      if (index === -1) this.showModal(true);
+    }
+  }, {
+    key: "showModal",
+    value: function showModal(value) {
+      this.setState({
+        showModal: value
+      });
     }
   }, {
     key: "updateCardPosition",
@@ -33256,7 +33372,9 @@ function (_React$Component) {
     value: function render() {
       return _react.default.createElement("div", {
         className: "everything"
-      }, _react.default.createElement("h1", null, "Winning Adulthood"), _react.default.createElement(_text.default, {
+      }, _react.default.createElement("h1", null, "Winning Adulthood"), this.state.showModal ? _react.default.createElement(_modal.default, {
+        showModal: this.showModal
+      }) : null, _react.default.createElement(_text.default, {
         addItem: this.addItem
       }), _react.default.createElement("div", {
         className: "board"
@@ -33275,7 +33393,7 @@ function (_React$Component) {
 }(_react.default.Component);
 
 _reactDom.default.render(_react.default.createElement(App, null), document.getElementById("root"));
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","/components/text":"components/text/index.js","/components/card":"components/card/index.js","./style.scss":"components/app/style.scss"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","/components/text":"components/text/index.js","/components/card":"components/card/index.js","/components/modal":"components/modal/index.js","./style.scss":"components/app/style.scss"}],"../node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;

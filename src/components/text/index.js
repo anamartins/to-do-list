@@ -15,11 +15,18 @@ class Text extends React.Component {
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onClickButton = this.onClickButton.bind(this);
+    this.onKeyPress = this.onKeyPress.bind(this);
     this.onColorChange = this.onColorChange.bind(this);
   }
 
   onInputChange(event) {
     this.setState({ value: event.target.value });
+  }
+
+  onKeyPress(event) {
+    if (event.key === "Enter") {
+      this.onClickButton();
+    }
   }
 
   onClickButton() {
@@ -57,6 +64,7 @@ class Text extends React.Component {
             type="text"
             value={this.state.value}
             onChange={this.onInputChange}
+            onKeyPress={this.onKeyPress}
           ></input>
           <div className="radio-group">{this.createRadio()}</div>
         </div>

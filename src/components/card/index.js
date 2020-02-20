@@ -41,6 +41,7 @@ class Card extends React.Component {
 
   onMouseUp(event) {
     window.removeEventListener("mousemove", this.onMouseMove);
+    window.removeEventListener("mouseup", this.onMouseUp);
     this.props.onDrop(this.props.id);
   }
 

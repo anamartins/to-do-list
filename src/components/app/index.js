@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Text from "/components/text";
 import Card from "/components/card";
+import Modal from "/components/modal";
 import "./style.scss";
 
 const CONST_INITIAL_TOP = 370;
@@ -12,7 +13,9 @@ class App extends React.Component {
     this.doneRef = React.createRef();
 
     this.state = {
-      cards: []
+      cards: [],
+      showModal: false,
+      trophy: 0
     };
 
     let localStorageCards = localStorage.getItem("cards");
@@ -26,6 +29,8 @@ class App extends React.Component {
     this.removeItem = this.removeItem.bind(this);
     this.updateCardPosition = this.updateCardPosition.bind(this);
     this.onCardDrop = this.onCardDrop.bind(this);
+    this.isEveryCardDone = this.isEveryCardDone.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
 
   addItem(value, color) {
@@ -67,6 +72,7 @@ class App extends React.Component {
         if (item.top > rectDone.top && item.top < rectDone.bottom) {
           if (item.left > rectDone.left && item.left < rectDone.right) {
             item.done = true;
+            this.isEveryCardDone();
           } else {
             item.done = false;
           }
@@ -77,6 +83,17 @@ class App extends React.Component {
     this.setState({ cards: cards });
     this.updateLocalStorage();
   }
+  isEveryCardDone() {
+    let cards = this.state.cards;
+    let index = cards.findIndex(item => item.done === false);
+    console.log("index", index);
+    if (index === -1) this.showModal(true);
+  }
+
+  showModal(value) {
+    this.setState({ showModal: value });
+  }
+
   updateCardPosition(id, xPos, yPos) {
     let cards = this.state.cards;
 
@@ -125,6 +142,8 @@ class App extends React.Component {
     return (
       <div className="everything">
         <h1>Winning Adulthood</h1>
+        {this.state.showModal ? <Modal showModal={this.showModal} /> : null}
+
         <Text addItem={this.addItem} />
         <div className="board">
           <div className="cards"> {this.createCard()}</div>
