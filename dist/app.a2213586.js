@@ -33042,16 +33042,20 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
-        className: "card " + this.props.color + (this.props.done ? " crossed" : ""),
+        className: "card " + this.props.color + (this.props.done ? " finished" : ""),
         style: {
           top: this.props.top,
           left: this.props.left
         },
         onMouseDown: this.onMouseDown,
         ref: this.cardRef
-      }, _react.default.createElement("p", null, this.props.value), _react.default.createElement("p", null, _react.default.createElement("a", {
+      }, _react.default.createElement("div", {
+        className: this.props.done ? "star" : "hide-star"
+      }, _react.default.createElement("img", {
+        src: "/img/golden-star.svg"
+      })), _react.default.createElement("p", null, this.props.value), _react.default.createElement("a", {
         onClick: this.deleteCard
-      }, "delete")));
+      }, "delete"));
     }
   }]);
 
@@ -33184,7 +33188,6 @@ function (_React$Component) {
     value: function onCardDrop(id) {
       var cards = this.state.cards;
       var rectDone = this.doneRef.current.getBoundingClientRect();
-      console.log("rect", rectDone);
       cards = cards.map(function (item) {
         if (item.id === id) {
           if (item.top > rectDone.top && item.top < rectDone.bottom) {

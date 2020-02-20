@@ -52,7 +52,7 @@ class Card extends React.Component {
     return (
       <div
         className={
-          "card " + this.props.color + (this.props.done ? " crossed" : "")
+          "card " + this.props.color + (this.props.done ? " finished" : "")
         }
         style={{
           top: this.props.top,
@@ -61,10 +61,12 @@ class Card extends React.Component {
         onMouseDown={this.onMouseDown}
         ref={this.cardRef}
       >
+        <div className={this.props.done ? "star" : "hide-star"}>
+          <img src="/img/golden-star.svg" />
+        </div>
         <p>{this.props.value}</p>
-        <p>
-          <a onClick={this.deleteCard}>delete</a>
-        </p>
+
+        <a onClick={this.deleteCard}>delete</a>
       </div>
     );
   }

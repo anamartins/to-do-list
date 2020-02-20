@@ -61,7 +61,6 @@ class App extends React.Component {
   onCardDrop(id) {
     let cards = this.state.cards;
     let rectDone = this.doneRef.current.getBoundingClientRect();
-    console.log("rect", rectDone);
 
     cards = cards.map(item => {
       if (item.id === id) {
