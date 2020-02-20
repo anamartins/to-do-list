@@ -31,6 +31,7 @@ class App extends React.Component {
     this.onCardDrop = this.onCardDrop.bind(this);
     this.isEveryCardDone = this.isEveryCardDone.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.changeCardIndex = this.changeCardIndex.bind(this);
   }
 
   addItem(value, color) {
@@ -90,6 +91,14 @@ class App extends React.Component {
     if (index === -1) this.showModal(true);
   }
 
+  changeCardIndex(id) {
+    let cards = this.state.cards;
+    let index = cards.findIndex(item => item.id === id);
+    let clickedCard = cards.splice(index, 1)["0"];
+    cards.push(clickedCard);
+    this.setState({ cards: cards });
+  }
+
   showModal(value) {
     this.setState({ showModal: value });
   }
@@ -131,6 +140,7 @@ class App extends React.Component {
           removeItem={this.removeItem}
           onUpdatePosition={this.updateCardPosition}
           onDrop={this.onCardDrop}
+          changeIndex={this.changeCardIndex}
           done={this.state.cards[i].done}
         />
       );

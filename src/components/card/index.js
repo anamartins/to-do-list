@@ -23,6 +23,7 @@ class Card extends React.Component {
     let posCard = { x: this.props.left, y: this.props.top };
     let posClick = { x: x, y: y };
     let diff = { x: posClick.x - posCard.x, y: posClick.y - posCard.y };
+    this.props.changeIndex(this.props.id);
 
     this.diff = diff;
   }
@@ -82,7 +83,8 @@ Card.propTypes = {
   removeItem: PropTypes.func,
   onUpdatePosition: PropTypes.func,
   onDrop: PropTypes.func,
-  done: PropTypes.bool
+  done: PropTypes.bool,
+  changeIndex: PropTypes.func
 };
 
 export default Card;

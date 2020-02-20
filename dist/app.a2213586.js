@@ -33023,6 +33023,7 @@ function (_React$Component) {
         x: posClick.x - posCard.x,
         y: posClick.y - posCard.y
       };
+      this.props.changeIndex(this.props.id);
       this.diff = diff;
     }
   }, {
@@ -33081,7 +33082,8 @@ Card.propTypes = {
   removeItem: _propTypes.default.func,
   onUpdatePosition: _propTypes.default.func,
   onDrop: _propTypes.default.func,
-  done: _propTypes.default.bool
+  done: _propTypes.default.bool,
+  changeIndex: _propTypes.default.func
 };
 var _default = Card;
 exports.default = _default;
@@ -33238,6 +33240,7 @@ function (_React$Component) {
     _this.onCardDrop = _this.onCardDrop.bind(_assertThisInitialized(_this));
     _this.isEveryCardDone = _this.isEveryCardDone.bind(_assertThisInitialized(_this));
     _this.showModal = _this.showModal.bind(_assertThisInitialized(_this));
+    _this.changeCardIndex = _this.changeCardIndex.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -33316,6 +33319,19 @@ function (_React$Component) {
       if (index === -1) this.showModal(true);
     }
   }, {
+    key: "changeCardIndex",
+    value: function changeCardIndex(id) {
+      var cards = this.state.cards;
+      var index = cards.findIndex(function (item) {
+        return item.id === id;
+      });
+      var clickedCard = cards.splice(index, 1)["0"];
+      cards.push(clickedCard);
+      this.setState({
+        cards: cards
+      });
+    }
+  }, {
     key: "showModal",
     value: function showModal(value) {
       this.setState({
@@ -33361,6 +33377,7 @@ function (_React$Component) {
           removeItem: this.removeItem,
           onUpdatePosition: this.updateCardPosition,
           onDrop: this.onCardDrop,
+          changeIndex: this.changeCardIndex,
           done: this.state.cards[i].done
         }));
       }
