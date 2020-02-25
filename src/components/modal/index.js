@@ -1,5 +1,7 @@
 import React from "react";
+import { TwitterShareButton } from "react-twitter-embed";
 import PropTypes from "prop-types";
+
 import "./style.scss";
 
 class Modal extends React.Component {
@@ -19,8 +21,16 @@ class Modal extends React.Component {
           X
         </button>
         <h1>Hooray!</h1>
-        <p> You've completed all the tasks!</p>
-        <p>Share this archievement:</p>
+        <img src="/img/archievement.svg" />
+        <p>You're free! Enjoy it!</p>
+        <TwitterShareButton
+          url={""}
+          options={{
+            text:
+              "Hooraaaay! I have finished all my tasks for today. I'm winning at adulthood!",
+            size: "large"
+          }}
+        />
       </div>
     );
   }

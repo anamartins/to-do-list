@@ -1,5 +1,5 @@
 .modal {
-  top: 30%;
+  top: 8%;
   width: 50%;
   background-color: white;
   border: 0.2rem solid #000;
@@ -16,7 +16,7 @@
     align-self: flex-end;
     position: absolute;
     border: 0;
-    width: 5%;
+    width: 7%;
     height: 10%;
     background-color: #ddd;
     cursor: pointer;
@@ -24,5 +24,19 @@
   }
   .close:hover {
     background-color: #aaa;
+  }
+  h1 {
+    margin-bottom: 1%;
+    font-size: 3rem;
+  }
+  img {
+    width: 25%;
+    align-self: center;
+  }
+  p {
+    font-size: 2rem;
+    font-family: "Amatic SC", sans-serif;
+    margin-top: 0;
+    margin-bottom: 2%;
   }
 }

@@ -33087,7 +33087,1428 @@ Card.propTypes = {
 };
 var _default = Card;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/card/style.scss"}],"components/modal/style.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/card/style.scss"}],"../node_modules/@babel/runtime/helpers/esm/classCallCheck.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _classCallCheck;
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+},{}],"../node_modules/@babel/runtime/helpers/esm/createClass.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _createClass;
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+},{}],"../node_modules/@babel/runtime/helpers/esm/typeof.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _typeof;
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    exports.default = _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    exports.default = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+},{}],"../node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _assertThisInitialized;
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+},{}],"../node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _possibleConstructorReturn;
+
+var _typeof2 = _interopRequireDefault(require("../../helpers/esm/typeof"));
+
+var _assertThisInitialized = _interopRequireDefault(require("./assertThisInitialized"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _possibleConstructorReturn(self, call) {
+  if (call && ((0, _typeof2.default)(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return (0, _assertThisInitialized.default)(self);
+}
+},{"../../helpers/esm/typeof":"../node_modules/@babel/runtime/helpers/esm/typeof.js","./assertThisInitialized":"../node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js"}],"../node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _getPrototypeOf;
+
+function _getPrototypeOf(o) {
+  exports.default = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+},{}],"../node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _setPrototypeOf;
+
+function _setPrototypeOf(o, p) {
+  exports.default = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+},{}],"../node_modules/@babel/runtime/helpers/esm/inherits.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _inherits;
+
+var _setPrototypeOf = _interopRequireDefault(require("./setPrototypeOf"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) (0, _setPrototypeOf.default)(subClass, superClass);
+}
+},{"./setPrototypeOf":"../node_modules/@babel/runtime/helpers/esm/setPrototypeOf.js"}],"../node_modules/@babel/runtime/helpers/esm/defineProperty.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _defineProperty;
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+},{}],"../node_modules/react-proptype-conditional-require/dist/isRequiredIf.js":[function(require,module,exports) {
+'use strict';Object.defineProperty(exports,'__esModule',{value:!0});var VALIDATOR_ARG_ERROR_MESSAGE='The typeValidator argument must be a function with the signature function(props, propName, componentName).',MESSAGE_ARG_ERROR_MESSAGE='The error message is optional, but must be a string if provided.',propIsRequired=function propIsRequired(a,b,c,d){if('boolean'==typeof a)return a;return'function'==typeof a?a(b,c,d):!(!0!==!!a)&&!!a},propExists=function propExists(a,b){return Object.hasOwnProperty.call(a,b)},missingPropError=function missingPropError(a,b,c,d){return d?new Error(d):new Error('Required '+a[b]+' `'+b+'`'+(' was not specified in `'+c+'`.'))},guardAgainstInvalidArgTypes=function guardAgainstInvalidArgTypes(a,b){if('function'!=typeof a)throw new TypeError(VALIDATOR_ARG_ERROR_MESSAGE);if(!!b&&'string'!=typeof b)throw new TypeError(MESSAGE_ARG_ERROR_MESSAGE)},isRequiredIf=function isRequiredIf(a,b,c){return guardAgainstInvalidArgTypes(a,c),function(d,e,f){for(var _len=arguments.length,g=Array(3<_len?_len-3:0),_key=3;_key<_len;_key++)g[_key-3]=arguments[_key];return propIsRequired(b,d,e,f)?propExists(d,e)?a.apply(void 0,[d,e,f].concat(g)):missingPropError(d,e,f,c):a.apply(void 0,[d,e,f].concat(g));// Is not required, so just run typeValidator.
+}};exports.default=isRequiredIf;
+
+
+},{}],"../node_modules/exenv/index.js":[function(require,module,exports) {
+var define;
+/*!
+  Copyright (c) 2015 Jed Watson.
+  Based on code that is Copyright 2013-2015, Facebook, Inc.
+  All rights reserved.
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var canUseDOM = !!(
+		typeof window !== 'undefined' &&
+		window.document &&
+		window.document.createElement
+	);
+
+	var ExecutionEnvironment = {
+
+		canUseDOM: canUseDOM,
+
+		canUseWorkers: typeof Worker !== 'undefined',
+
+		canUseEventListeners:
+			canUseDOM && !!(window.addEventListener || window.attachEvent),
+
+		canUseViewport: canUseDOM && !!window.screen
+
+	};
+
+	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+		define(function () {
+			return ExecutionEnvironment;
+		});
+	} else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = ExecutionEnvironment;
+	} else {
+		window.ExecutionEnvironment = ExecutionEnvironment;
+	}
+
+}());
+
+},{}],"../node_modules/scriptjs/dist/script.js":[function(require,module,exports) {
+var define;
+/*!
+  * $script.js JS loader & dependency manager
+  * https://github.com/ded/script.js
+  * (c) Dustin Diaz 2014 | License MIT
+  */
+
+(function (name, definition) {
+  if (typeof module != 'undefined' && module.exports) module.exports = definition()
+  else if (typeof define == 'function' && define.amd) define(definition)
+  else this[name] = definition()
+})('$script', function () {
+  var doc = document
+    , head = doc.getElementsByTagName('head')[0]
+    , s = 'string'
+    , f = false
+    , push = 'push'
+    , readyState = 'readyState'
+    , onreadystatechange = 'onreadystatechange'
+    , list = {}
+    , ids = {}
+    , delay = {}
+    , scripts = {}
+    , scriptpath
+    , urlArgs
+
+  function every(ar, fn) {
+    for (var i = 0, j = ar.length; i < j; ++i) if (!fn(ar[i])) return f
+    return 1
+  }
+  function each(ar, fn) {
+    every(ar, function (el) {
+      fn(el)
+      return 1
+    })
+  }
+
+  function $script(paths, idOrDone, optDone) {
+    paths = paths[push] ? paths : [paths]
+    var idOrDoneIsDone = idOrDone && idOrDone.call
+      , done = idOrDoneIsDone ? idOrDone : optDone
+      , id = idOrDoneIsDone ? paths.join('') : idOrDone
+      , queue = paths.length
+    function loopFn(item) {
+      return item.call ? item() : list[item]
+    }
+    function callback() {
+      if (!--queue) {
+        list[id] = 1
+        done && done()
+        for (var dset in delay) {
+          every(dset.split('|'), loopFn) && !each(delay[dset], loopFn) && (delay[dset] = [])
+        }
+      }
+    }
+    setTimeout(function () {
+      each(paths, function loading(path, force) {
+        if (path === null) return callback()
+        
+        if (!force && !/^https?:\/\//.test(path) && scriptpath) {
+          path = (path.indexOf('.js') === -1) ? scriptpath + path + '.js' : scriptpath + path;
+        }
+        
+        if (scripts[path]) {
+          if (id) ids[id] = 1
+          return (scripts[path] == 2) ? callback() : setTimeout(function () { loading(path, true) }, 0)
+        }
+
+        scripts[path] = 1
+        if (id) ids[id] = 1
+        create(path, callback)
+      })
+    }, 0)
+    return $script
+  }
+
+  function create(path, fn) {
+    var el = doc.createElement('script'), loaded
+    el.onload = el.onerror = el[onreadystatechange] = function () {
+      if ((el[readyState] && !(/^c|loade/.test(el[readyState]))) || loaded) return;
+      el.onload = el[onreadystatechange] = null
+      loaded = 1
+      scripts[path] = 2
+      fn()
+    }
+    el.async = 1
+    el.src = urlArgs ? path + (path.indexOf('?') === -1 ? '?' : '&') + urlArgs : path;
+    head.insertBefore(el, head.lastChild)
+  }
+
+  $script.get = create
+
+  $script.order = function (scripts, id, done) {
+    (function callback(s) {
+      s = scripts.shift()
+      !scripts.length ? $script(s, id, done) : $script(s, callback)
+    }())
+  }
+
+  $script.path = function (p) {
+    scriptpath = p
+  }
+  $script.urlArgs = function (str) {
+    urlArgs = str;
+  }
+  $script.ready = function (deps, ready, req) {
+    deps = deps[push] ? deps : [deps]
+    var missing = [];
+    !each(deps, function (dep) {
+      list[dep] || missing[push](dep);
+    }) && every(deps, function (dep) {return list[dep]}) ?
+      ready() : !function (key) {
+      delay[key] = delay[key] || []
+      delay[key][push](ready)
+      req && req(missing)
+    }(deps.join('|'))
+    return $script
+  }
+
+  $script.done = function (idOrDone) {
+    $script([null], idOrDone)
+  }
+
+  return $script
+});
+
+},{}],"../node_modules/react-twitter-embed/dist/index.es.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.TwitterOnAirButton = exports.TwitterVideoEmbed = exports.TwitterDMButton = exports.TwitterMomentShare = exports.TwitterTweetEmbed = exports.TwitterMentionButton = exports.TwitterHashtagButton = exports.TwitterFollowButton = exports.TwitterShareButton = exports.TwitterTimelineEmbed = void 0;
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/createClass"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/getPrototypeOf"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/inherits"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/defineProperty"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _reactProptypeConditionalRequire = _interopRequireDefault(require("react-proptype-conditional-require"));
+
+var _exenv = _interopRequireDefault(require("exenv"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var twitterWidgetJs = 'https://platform.twitter.com/widgets.js';
+
+var TwitterTimelineEmbed =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterTimelineEmbed, _Component);
+
+  function TwitterTimelineEmbed(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterTimelineEmbed);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterTimelineEmbed).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterTimelineEmbed, [{
+    key: "buildChromeOptions",
+    value: function buildChromeOptions(options) {
+      options.chrome = '';
+
+      if (this.props.noHeader) {
+        options.chrome = options.chrome + ' noheader';
+      }
+
+      if (this.props.noFooter) {
+        options.chrome = options.chrome + ' nofooter';
+      }
+
+      if (this.props.noBorders) {
+        options.chrome = options.chrome + ' noborders';
+      }
+
+      if (this.props.noScrollbar) {
+        options.chrome = options.chrome + ' noscrollbar';
+      }
+
+      if (this.props.transparent) {
+        options.chrome = options.chrome + ' transparent';
+      }
+
+      return options;
+    }
+  }, {
+    key: "buildOptions",
+    value: function buildOptions() {
+      var options = Object.assign({}, this.props.options);
+
+      if (this.props.autoHeight) {
+        options.height = this.refs.embedContainer.parentNode.offsetHeight;
+      }
+
+      options = Object.assign({}, options, {
+        theme: this.props.theme,
+        linkColor: this.props.linkColor,
+        borderColor: this.props.borderColor,
+        lang: this.props.lang
+      });
+      return options;
+    }
+  }, {
+    key: "renderWidget",
+    value: function renderWidget(options) {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createTimeline({
+          sourceType: this.props.sourceType,
+          screenName: this.props.screenName,
+          userId: this.props.userId,
+          ownerScreenName: this.props.ownerScreenName,
+          slug: this.props.slug,
+          id: this.props.id || this.props.widgetId,
+          url: this.props.url
+        }, this.refs.embedContainer, options).then(function (element) {
+          _this2.setState({
+            isLoading: false
+          });
+
+          if (onLoad) {
+            onLoad(element);
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterTimelineEmbed, aborting load.');
+            return;
+          }
+
+          var options = _this3.buildOptions();
+          /** Append chrome options */
+
+
+          options = _this3.buildChromeOptions(options);
+
+          _this3.renderWidget(options);
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterTimelineEmbed;
+}(_react.Component);
+
+exports.TwitterTimelineEmbed = TwitterTimelineEmbed;
+(0, _defineProperty2.default)(TwitterTimelineEmbed, "propTypes", {
+  /**
+       * This can be either of profile, likes, list, collection, URL, widget
+       */
+  sourceType: _propTypes.default.oneOf(['profile', 'likes', 'list', 'collection', 'url', 'widget']).isRequired,
+
+  /**
+       * username of twitter handle as String
+       */
+  screenName: (0, _reactProptypeConditionalRequire.default)(_propTypes.default.string, function (props) {
+    return !props.hasOwnProperty('userId') && (props.sourceType === 'profile' || props.sourceType === 'likes');
+  }),
+
+  /**
+       * UserId of twitter handle as number
+       */
+  userId: (0, _reactProptypeConditionalRequire.default)(_propTypes.default.number, function (props) {
+    return !props.hasOwnProperty('screenName') && (props.sourceType === 'profile' || props.sourceType === 'likes');
+  }),
+
+  /**
+       * To show list, used along with slug
+       */
+  ownerScreenName: (0, _reactProptypeConditionalRequire.default)(_propTypes.default.string, function (props) {
+    return props.sourceType === 'list' && !props.hasOwnProperty('id');
+  }),
+
+  /**
+       * To show list, used along with ownerScreenName
+       */
+  slug: (0, _reactProptypeConditionalRequire.default)(_propTypes.default.string, function (props) {
+    return props.sourceType === 'list' && !props.hasOwnProperty('id');
+  }),
+
+  /**
+       * To show list, unique list id
+       * Also used with collections, in that case its valid collection id
+       */
+  id: (0, _reactProptypeConditionalRequire.default)(_propTypes.default.oneOfType([_propTypes.default.number, _propTypes.default.string]), function (props) {
+    return props.sourceType === 'list' && !props.hasOwnProperty('ownerScreenName') && !props.hasOwnProperty('slug') || props.sourceType === 'collection';
+  }),
+
+  /**
+       * To show twitter content with url.
+       * Supported content includes profiles, likes, lists, and collections.
+       */
+  url: (0, _reactProptypeConditionalRequire.default)(_propTypes.default.string, function (props) {
+    return props.sourceType === 'url';
+  }),
+
+  /**
+       * To show custom widget
+       */
+  widgetId: (0, _reactProptypeConditionalRequire.default)(_propTypes.default.string, function (props) {
+    return props.sourceType === 'widget';
+  }),
+
+  /**
+       * Additional options to pass to twitter widget plugin
+       */
+  options: _propTypes.default.object,
+
+  /**
+       * Automatically fit into parent container height
+       */
+  autoHeight: _propTypes.default.bool,
+
+  /**
+       * With dark or light theme
+       */
+  theme: _propTypes.default.oneOf(['dark', 'light']),
+
+  /**
+       * With custom link colors. Note: Only Hex colors are supported.
+       */
+  linkColor: _propTypes.default.string,
+
+  /**
+       * With custom border colors. Note: Only Hex colors are supported.
+       */
+  borderColor: _propTypes.default.string,
+
+  /**
+       * Hide the header from timeline
+       */
+  noHeader: _propTypes.default.bool,
+
+  /**
+       * Hide the footer from timeline
+       */
+  noFooter: _propTypes.default.bool,
+
+  /**
+       * Hide the border from timeline
+       */
+  noBorders: _propTypes.default.bool,
+
+  /**
+       * Hide the scrollbars
+       */
+  noScrollbar: _propTypes.default.bool,
+
+  /**
+       * Enable Transparancy
+       */
+  transparent: _propTypes.default.bool,
+
+  /**
+       * Custom language code. Supported codes here: https://developer.twitter.com/en/docs/twitter-for-websites/twitter-for-websites-supported-languages/overview.html
+       */
+  lang: _propTypes.default.string,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterShareButton =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterShareButton, _Component);
+
+  function TwitterShareButton(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterShareButton);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterShareButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterShareButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterShareButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createShareButton(_this2.props.url, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterShareButton;
+}(_react.Component);
+
+exports.TwitterShareButton = TwitterShareButton;
+(0, _defineProperty2.default)(TwitterShareButton, "propTypes", {
+  /**
+  * Url for sharing
+  */
+  url: _propTypes.default.string.isRequired,
+
+  /**
+  * Additional options for overriding config. Details at : https://dev.twitter.com/web/tweet-button/parameters
+  */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterFollowButton =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterFollowButton, _Component);
+
+  function TwitterFollowButton(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterFollowButton);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterFollowButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterFollowButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterFollowButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createFollowButton(_this2.props.screenName, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterFollowButton;
+}(_react.Component);
+
+exports.TwitterFollowButton = TwitterFollowButton;
+(0, _defineProperty2.default)(TwitterFollowButton, "propTypes", {
+  /**
+       * Username of twitter user which will be followed on click
+       */
+  screenName: _propTypes.default.string.isRequired,
+
+  /**
+       * Additional options to be added to the button
+       */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterHashtagButton =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterHashtagButton, _Component);
+
+  function TwitterHashtagButton(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterHashtagButton);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterHashtagButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterHashtagButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterHashtagButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createHashtagButton(_this2.props.tag, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterHashtagButton;
+}(_react.Component);
+
+exports.TwitterHashtagButton = TwitterHashtagButton;
+(0, _defineProperty2.default)(TwitterHashtagButton, "propTypes", {
+  /**
+       * Tag name for hashtag button
+       */
+  tag: _propTypes.default.string.isRequired,
+
+  /**
+       * Additional options to be added to the button
+       */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterMentionButton =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterMentionButton, _Component);
+
+  function TwitterMentionButton(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterMentionButton);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterMentionButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterMentionButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterMentionButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createMentionButton(_this2.props.screenName, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterMentionButton;
+}(_react.Component);
+
+exports.TwitterMentionButton = TwitterMentionButton;
+(0, _defineProperty2.default)(TwitterMentionButton, "propTypes", {
+  /**
+   * Username to which you will need to tweet
+   */
+  screenName: _propTypes.default.string.isRequired,
+
+  /**
+   * Additional options for overriding config.
+   */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterTweetEmbed =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterTweetEmbed, _Component);
+
+  function TwitterTweetEmbed(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterTweetEmbed);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterTweetEmbed).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterTweetEmbed, [{
+    key: "renderWidget",
+    value: function renderWidget() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (!window.twttr) {
+        console.error('Failure to load window.twttr in TwitterTweetEmbed, aborting load.');
+        return;
+      }
+
+      if (!this.isMountCanceled) {
+        window.twttr.widgets.createTweet(this.props.tweetId, this.refs.embedContainer, this.props.options).then(function (element) {
+          _this2.setState({
+            isLoading: false
+          });
+
+          if (onLoad) {
+            onLoad(element);
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this3 = this;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          _this3.renderWidget();
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterTweetEmbed;
+}(_react.Component);
+
+exports.TwitterTweetEmbed = TwitterTweetEmbed;
+(0, _defineProperty2.default)(TwitterTweetEmbed, "propTypes", {
+  /**
+       * Tweet id that needs to be shown
+       */
+  tweetId: _propTypes.default.string.isRequired,
+
+  /**
+       * Additional options to pass to twitter widget plugin
+       */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterMomentShare =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterMomentShare, _Component);
+
+  function TwitterMomentShare(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterMomentShare);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterMomentShare).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterMomentShare, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterMomentShare, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createMoment(_this2.props.momentId, _this2.refs.shareMoment, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "shareMoment"
+      }));
+    }
+  }]);
+  return TwitterMomentShare;
+}(_react.Component);
+
+exports.TwitterMomentShare = TwitterMomentShare;
+(0, _defineProperty2.default)(TwitterMomentShare, "propTypes", {
+  /**
+   * id of Twitter moment to show
+   */
+  momentId: _propTypes.default.string.isRequired,
+
+  /**
+   * Additional options for overriding config.
+   */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterDMButton =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterDMButton, _Component);
+
+  function TwitterDMButton(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterDMButton);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterDMButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterDMButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterDMButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createDMButton(_this2.props.id, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterDMButton;
+}(_react.Component);
+
+exports.TwitterDMButton = TwitterDMButton;
+(0, _defineProperty2.default)(TwitterDMButton, "propTypes", {
+  /**
+  * Twitter user id for DM button
+  */
+  id: _propTypes.default.number.isRequired,
+
+  /**
+  * Additional options to be added to the button
+  */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterVideoEmbed =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterVideoEmbed, _Component);
+
+  function TwitterVideoEmbed(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterVideoEmbed);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterVideoEmbed).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterVideoEmbed, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterVideoEmbed, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createVideo(_this2.props.id, _this2.refs.embedContainer).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterVideoEmbed;
+}(_react.Component);
+
+exports.TwitterVideoEmbed = TwitterVideoEmbed;
+(0, _defineProperty2.default)(TwitterVideoEmbed, "propTypes", {
+  /**
+       * Id of video tweet.
+       */
+  id: _propTypes.default.string.isRequired,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+
+var TwitterOnAirButton =
+/*#__PURE__*/
+function (_Component) {
+  (0, _inherits2.default)(TwitterOnAirButton, _Component);
+
+  function TwitterOnAirButton(props) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, TwitterOnAirButton);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TwitterOnAirButton).call(this, props));
+    _this.state = {
+      isLoading: true
+    };
+    return _this;
+  }
+
+  (0, _createClass2.default)(TwitterOnAirButton, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var onLoad = this.props.onLoad;
+
+      if (_exenv.default.canUseDOM) {
+        var script = require('scriptjs');
+
+        script(twitterWidgetJs, 'twitter-embed', function () {
+          if (!window.twttr) {
+            console.error('Failure to load window.twttr in TwitterOnAirButton, aborting load.');
+            return;
+          }
+
+          if (!_this2.isMountCanceled) {
+            window.twttr.widgets.createPeriscopeOnAirButton(_this2.props.username, _this2.refs.embedContainer, _this2.props.options).then(function (element) {
+              _this2.setState({
+                isLoading: false
+              });
+
+              if (onLoad) {
+                onLoad(element);
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.isMountCanceled = true;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var isLoading = this.state.isLoading;
+      var placeholder = this.props.placeholder;
+      return _react.default.createElement(_react.default.Fragment, null, isLoading && placeholder, _react.default.createElement("div", {
+        ref: "embedContainer"
+      }));
+    }
+  }]);
+  return TwitterOnAirButton;
+}(_react.Component);
+
+exports.TwitterOnAirButton = TwitterOnAirButton;
+(0, _defineProperty2.default)(TwitterOnAirButton, "propTypes", {
+  /**
+   * Username for which you require periscope on air button
+   */
+  username: _propTypes.default.string.isRequired,
+
+  /**
+   * Additional options for overriding config.
+   */
+  options: _propTypes.default.object,
+
+  /**
+   * Placeholder while tweet is loading
+   */
+  placeholder: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.element]),
+
+  /**
+   * Function to execute after load, return html element
+   */
+  onLoad: _propTypes.default.func
+});
+},{"@babel/runtime/helpers/esm/classCallCheck":"../node_modules/@babel/runtime/helpers/esm/classCallCheck.js","@babel/runtime/helpers/esm/createClass":"../node_modules/@babel/runtime/helpers/esm/createClass.js","@babel/runtime/helpers/esm/possibleConstructorReturn":"../node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js","@babel/runtime/helpers/esm/getPrototypeOf":"../node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js","@babel/runtime/helpers/esm/inherits":"../node_modules/@babel/runtime/helpers/esm/inherits.js","@babel/runtime/helpers/esm/defineProperty":"../node_modules/@babel/runtime/helpers/esm/defineProperty.js","react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","react-proptype-conditional-require":"../node_modules/react-proptype-conditional-require/dist/isRequiredIf.js","exenv":"../node_modules/exenv/index.js","scriptjs":"../node_modules/scriptjs/dist/script.js"}],"components/modal/style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -33101,6 +34522,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
+
+var _reactTwitterEmbed = require("react-twitter-embed");
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
@@ -33154,7 +34577,15 @@ function (_React$Component) {
       }, _react.default.createElement("button", {
         className: "close",
         onClick: this.onButtonClick
-      }, "X"), _react.default.createElement("h1", null, "Hooray!"), _react.default.createElement("p", null, " You've completed all the tasks!"), _react.default.createElement("p", null, "Share this archievement:"));
+      }, "X"), _react.default.createElement("h1", null, "Hooray!"), _react.default.createElement("img", {
+        src: "/img/archievement.svg"
+      }), _react.default.createElement("p", null, "You're free! Enjoy it!"), _react.default.createElement(_reactTwitterEmbed.TwitterShareButton, {
+        url: "",
+        options: {
+          text: "Hooraaaay! I have finished all my tasks for today. I'm winning at adulthood!",
+          size: "large"
+        }
+      }));
     }
   }]);
 
@@ -33166,7 +34597,7 @@ Modal.propTypes = {
 };
 var _default = Modal;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/modal/style.scss"}],"components/app/style.scss":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-twitter-embed":"../node_modules/react-twitter-embed/dist/index.es.js","prop-types":"../node_modules/prop-types/index.js","./style.scss":"components/modal/style.scss"}],"components/app/style.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -33438,7 +34869,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56752" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60095" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
