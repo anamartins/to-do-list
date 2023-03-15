@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Text from "/components/text";
-import Card from "/components/card";
-import Modal from "/components/modal";
+import Text from "../text"
+import Card from "../card";
+import Modal from "../modal";
 import "./style.scss";
 
 const CONST_INITIAL_TOP = 370;

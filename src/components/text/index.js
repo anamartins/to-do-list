@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Radio from "/components/radio-button";
+import Radio from "../radio-button";
 
 import "./style.scss";
 
